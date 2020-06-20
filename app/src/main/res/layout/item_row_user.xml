@@ -13,13 +13,13 @@
     <RelativeLayout
         android:id="@+id/item_list"
         android:layout_width="match_parent"
-        android:layout_height="170dp"
+        android:layout_height="160dp"
         android:padding="14dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/img_user_photo"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_marginBottom="4dp"
             android:scaleType="centerCrop"
             tools:src="@color/colorAccent"/>
@@ -30,7 +30,8 @@
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/img_user_photo"
             android:layout_marginHorizontal="16dp"
-            android:layout_marginVertical="8dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="4dp"
             android:textSize="22sp"
             android:textStyle="bold"
             tools:text="Name of User"/>
@@ -45,7 +46,9 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="2dp"
             tools:text="User Companies"
-            android:textSize="18sp"/>
+            android:textSize="15sp"
+            android:ellipsize="end"
+            android:maxLines="1"/>
 
         <TextView
             android:id="@+id/tv_user_location"
@@ -56,21 +59,20 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="4dp"
-            tools:text="User Location"/>
+            tools:text="User Location"
+            android:textSize="15sp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_above="@id/tv_user_stats"
-            android:layout_toEndOf="@id/img_user_photo"
-            android:layout_marginStart="16dp"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Repository"
+                android:text="@string/repository"
                 android:textAlignment="center"
                 android:textSize="12sp"/>
 
@@ -78,7 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Followers"
+                android:text="@string/follower"
                 android:textAlignment="center"
                 android:textSize="12sp"/>
 
@@ -86,7 +88,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Following"
+                android:text="@string/following"
                 android:textAlignment="center"
                 android:textSize="12sp"/>
 
@@ -97,8 +99,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_toEndOf="@id/img_user_photo"
-            android:layout_marginStart="16dp"
             android:orientation="horizontal">
 
             <TextView

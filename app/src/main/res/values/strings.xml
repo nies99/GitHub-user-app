@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">GitHub User App</string>
+    <string name="repository">Repository</string>
+    <string name="follower">Follower</string>
+    <string name="following">Following</string>
+    <string name="desc">Header</string>
+    <string name="bar">|</string>
 </resources>

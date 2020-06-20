@@ -29,7 +29,12 @@ class Adapter(private val listUser: ArrayList<User>): RecyclerView.Adapter<Adapt
         init {
             item.setOnClickListener{
                 val intent = Intent(context, DetailActivity::class.java)
+                val position = adapterPosition
+
                 intent.putExtra(DetailActivity.EXTRA_USER, listUser)
+                intent.putExtra(DetailActivity.EXTRA_POSITION, position)
+                intent.putExtra(DetailActivity.EXTRA_PHOTO, itemView.context.resources.getIdentifier(listUser[position].avatar, "drawable", itemView.context.packageName))
+
                 context.startActivity(intent)
             }
         }
@@ -41,9 +46,10 @@ class Adapter(private val listUser: ArrayList<User>): RecyclerView.Adapter<Adapt
 
     override fun onBindViewHolder(holder: CardViewViewHolder, position: Int) {
         val user = listUser[position]
+        val photo = holder.itemView.context.resources.getIdentifier(user.avatar, "drawable", holder.itemView.context.packageName)
 
         Glide.with(holder.itemView.context)
-            .load(holder.itemView.context.resources.getIdentifier(user.avatar, "drawable", holder.itemView.context.packageName))
+            .load(photo)
             .apply(RequestOptions().override(100, 100))
             .into(holder.imgPhoto)
 

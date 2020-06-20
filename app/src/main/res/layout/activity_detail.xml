@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -19,7 +18,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="125dp"
                 android:scaleType="centerCrop"
-                tools:src="@color/colorAccent"/>
+                android:src="@color/colorAccent"
+                android:contentDescription="@string/desc"/>
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/tv_photo"
@@ -50,17 +50,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:text="Username"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:layout_weight="1"/>
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:text="|"
+                android:text="@string/bar"
                 android:textAlignment="center"
                 android:textSize="22sp"
-                android:textStyle="bold"
                 android:layout_weight="1"/>
 
             <TextView
@@ -68,55 +67,88 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:text="User Location"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:layout_weight="1"/>
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"/>
 
         </LinearLayout>
 
-        <TableLayout
+        <TextView
+            android:id="@+id/tv_company"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center">
+            android:layout_margin="4dp"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            tools:text="User Company"
+            android:textSize="14sp"/>
 
-            <TableRow
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:text="@string/repository"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:textAlignment="center"/>
 
-                <TextView
-                    android:id="@+id/tv_company"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="User Company"/>
-
-            </TableRow>
-
-            <TableRow
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:text="@string/follower"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:textAlignment="center"/>
 
-                <TextView
-                    android:id="@+id/tv_repo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="User Company"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/following"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:textAlignment="center"/>
 
-                <TextView
-                    android:id="@+id/tv_follower"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="User Company"/>
+        </LinearLayout>
 
-                <TextView
-                    android:id="@+id/tv_following"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="User Company"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp">
 
+            <TextView
+                android:id="@+id/tv_repo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="0"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:textAlignment="center"/>
 
-            </TableRow>
+            <TextView
+                android:id="@+id/tv_follower"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="0"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:textAlignment="center"/>
 
-        </TableLayout>
+            <TextView
+                android:id="@+id/tv_following"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="0"
+                android:textSize="14sp"
+                android:layout_weight="1"
+                android:textAlignment="center"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
