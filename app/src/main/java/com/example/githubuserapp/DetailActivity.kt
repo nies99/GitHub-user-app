@@ -19,9 +19,6 @@ class DetailActivity : AppCompatActivity() {
         val tvName: TextView = findViewById(R.id.tv_name)
         val tvLocation: TextView = findViewById(R.id.tv_location)
 
-        val user = intent.getParcelableExtra(EXTRA_USER) as User
-        tvName.text = user.name
-        tvLocation.text = user.location
-        tvPhoto.setImageResource(user.avatar.toInt())
+        var user = intent.getParcelableArrayListExtra<User>(EXTRA_USER) as ArrayList<User>
     }
 }

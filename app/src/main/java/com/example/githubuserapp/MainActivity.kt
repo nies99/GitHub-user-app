@@ -3,10 +3,9 @@ package com.example.githubuserapp
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Adapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import org.json.JSONArray
+import org.json.JSONObject
 import java.io.IOException
 
 class MainActivity : AppCompatActivity() {
@@ -20,10 +19,9 @@ class MainActivity : AppCompatActivity() {
         rvUsers = findViewById(R.id.rv_users)
         rvUsers.setHasFixedSize(true)
 
-        showRecyclerView()
+        getJSON(this)?.let { readJSON(it) }
 
-        val obj = readJSON(this)
-        list.addAll(UserData.listData)
+        showRecyclerView()
     }
 
     private fun showRecyclerView() {
@@ -32,29 +30,43 @@ class MainActivity : AppCompatActivity() {
         rvUsers.adapter = cardViewAdapter
     }
 
-    fun readJSON(context: Context): String? {
+    private fun getJSON(context: Context): String? {
         val jsonString: String
         try {
-            jsonString = context.assets.open("githubuser.json").bufferedReader().use { it.readText()}
-
-            val jsonlist = JSONArray(jsonString)
-
-            for (i in 0..jsonlist.length()){
-                val jsonobj = jsonlist.getJSONObject(i)
-                UserData.userUsername.add(jsonobj.getString("username"))
-                UserData.userName.add(jsonobj.getString("name"))
-                UserData.userAvatar.add(jsonobj.getString("avatar"))
-                UserData.userCompany.add(jsonobj.getString("company"))
-                UserData.userLocation.add(jsonobj.getString("location"))
-                UserData.userRepo.add(jsonobj.getInt("repository"))
-                UserData.userFollower.add(jsonobj.getInt("follower"))
-                UserData.userFollowing.add(jsonobj.getInt("following"))
-            }
-        }
-        catch (ioException: IOException) {
+            jsonString = context.assets.open("githubuser.json").bufferedReader().use { it.readText() }
+        } catch (ioException: IOException) {
             ioException.printStackTrace()
             return null
         }
         return jsonString
+    }
+
+    private fun readJSON(response: String) {
+        val objectJSON = JSONObject(response)
+        val userArray = objectJSON.getJSONArray("users")
+
+        for (obj in 0 until userArray.length()) {
+            val userObject = userArray.getJSONObject(obj)
+            val username = userObject.getString("username")
+            val name = userObject.getString("name")
+            val avatar = userObject.getString("avatar")
+            val company = userObject.getString("company")
+            val location = userObject.getString("location")
+            val repo = userObject.getInt("repository")
+            val follower = userObject.getInt("follower")
+            val following = userObject.getInt("following")
+
+            val user = User(
+                username = username,
+                name = name,
+                avatar = avatar,
+                company = company,
+                location = location,
+                repository = repo,
+                follower = follower,
+                following = following
+            )
+            list.add(user)
+        }
     }
 }

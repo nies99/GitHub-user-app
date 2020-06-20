@@ -43,8 +43,8 @@ class Adapter(private val listUser: ArrayList<User>): RecyclerView.Adapter<Adapt
         val user = listUser[position]
 
         Glide.with(holder.itemView.context)
-            .load(user.avatar)
-            .apply(RequestOptions().override(350, 550))
+            .load(holder.itemView.context.resources.getIdentifier(user.avatar, "drawable", holder.itemView.context.packageName))
+            .apply(RequestOptions().override(100, 100))
             .into(holder.imgPhoto)
 
         holder.tvName.text = user.name
