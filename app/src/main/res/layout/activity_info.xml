@@ -6,13 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_users"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginVertical="4dp"
-        tools:listitem="@layout/item_row_user"/>
-
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/buttom_app_bar"
         android:layout_width="match_parent"
@@ -22,7 +15,7 @@
         app:hideOnScroll="true"
         app:fabCradleMargin="8dp"
         app:fabCradleRoundedCornerRadius="8dp"
-        app:menu="@menu/app_bar_menu"
+        app:menu="@menu/back_menu"
         app:navigationIcon="@drawable/ic_baseline_menu_24"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

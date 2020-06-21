@@ -1,8 +1,11 @@
 package com.example.githubuserapp
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import org.json.JSONObject
@@ -67,6 +70,29 @@ class MainActivity : AppCompatActivity() {
                 following = following
             )
             list.add(user)
+        }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        setMode(item.itemId)
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun setMode(selectedMode: Int) {
+        when (selectedMode) {
+            R.id.go_to_github -> {
+                val goToGithub = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.github.com/"))
+                startActivity(goToGithub)
+            }
+
+            R.id.menuInfo -> {
+
+            }
+
+            android.R.id.home -> {
+                val navigationDrawerFragment = NavigationDrawer()
+                navigationDrawerFragment.show(supportFragmentManager, navigationDrawerFragment.tag)
+            }
         }
     }
 }
