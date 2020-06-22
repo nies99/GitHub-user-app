@@ -1,245 +1,334 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailActivity">
+    android:background="@color/background"
+    tools:context=".DetailActivity"
+    tools:ignore="Overdraw">
 
-    <LinearLayout
+    <ScrollView
+        android:id="@+id/scroll_detail"
         android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="175dp"
+                android:layout_marginBottom="14dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:scaleType="centerCrop"
+                    android:src="@color/colorAccent"
+                    android:contentDescription="@string/desc"/>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/tv_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    tools:src="@android:color/black"
+                    android:layout_gravity="bottom"/>
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="User Name"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginTop="6dp"
+                android:layout_marginHorizontal="22dp">
+
+                <TextView
+                    android:id="@+id/tv_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Username"
+                    android:textColor="@color/colorPrimaryLight"
+                    android:textSize="16sp"
+                    android:layout_gravity="center_vertical"
+                    android:drawableStart="@drawable/ic_id_black"
+                    android:drawablePadding="6dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bar"
+                    android:textAlignment="center"
+                    android:layout_marginStart="8dp"
+                    android:textSize="22sp"/>
+
+                <TextView
+                    android:id="@+id/tv_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="User Location"
+                    android:layout_marginStart="8dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorPrimaryLight"
+                    android:layout_gravity="center_vertical"
+                    android:drawableStart="@drawable/ic_pin_black"
+                    android:drawablePadding="2dp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_company"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="4dp"
+                android:layout_marginHorizontal="10dp"
+                tools:text="User Company"
+                android:textColor="@color/colorPrimaryLight"
+                android:textSize="14sp"
+                android:drawablePadding="10dp"
+                android:drawableStart="@drawable/ic_building_black"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="36dp"
+                android:layout_marginHorizontal="14dp"
+                android:layout_marginBottom="64dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    card_view:cardCornerRadius="10dp"
+                    card_view:cardElevation="4dp"
+                    android:elevation="4dp"
+                    android:layout_margin="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            card_view:cardCornerRadius="8dp"
+                            card_view:cardElevation="4dp"
+                            android:backgroundTint="@color/colorPrimary"
+                            android:elevation="4dp"
+                            android:layout_marginHorizontal="2dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/repository"
+                                android:textColor="@android:color/white"
+                                android:textSize="14sp"
+                                android:layout_weight="1"
+                                android:textAlignment="center"/>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/tv_repo"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            tools:text="0"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="18sp"
+                            android:layout_weight="1"
+                            android:textAlignment="center"
+                            android:layout_marginBottom="4dp"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    card_view:cardCornerRadius="10dp"
+                    card_view:cardElevation="4dp"
+                    android:elevation="4dp"
+                    android:layout_margin="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            card_view:cardCornerRadius="8dp"
+                            card_view:cardElevation="4dp"
+                            android:backgroundTint="@color/colorPrimary"
+                            android:elevation="4dp"
+                            android:layout_marginHorizontal="2dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/follower"
+                                android:textColor="@android:color/white"
+                                android:textSize="14sp"
+                                android:layout_weight="1"
+                                android:textAlignment="center"/>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/tv_follower"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            tools:text="0"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="18sp"
+                            android:layout_weight="1"
+                            android:textAlignment="center"
+                            android:layout_marginBottom="4dp"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    card_view:cardCornerRadius="10dp"
+                    card_view:cardElevation="4dp"
+                    android:elevation="4dp"
+                    android:layout_margin="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            card_view:cardCornerRadius="8dp"
+                            card_view:cardElevation="4dp"
+                            android:backgroundTint="@color/colorPrimary"
+                            android:elevation="4dp"
+                            android:layout_marginHorizontal="2dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/following"
+                                android:textColor="@android:color/white"
+                                android:textSize="14sp"
+                                android:layout_weight="1"
+                                android:textAlignment="center"/>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/tv_following"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            tools:text="0"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="18sp"
+                            android:layout_weight="1"
+                            android:textAlignment="center"
+                            android:layout_marginBottom="4dp"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fab_1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="245dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="@color/colorPrimaryLight"
+        android:padding="8dp"
+        android:text="@string/fab_goto"
+        android:textColor="@android:color/white"
+        card_view:icon="@drawable/ic_github_mark_32px"
+        card_view:iconTint="@android:color/white"
+        android:visibility="invisible"/>
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="175dp"
-            android:layout_marginBottom="14dp">
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fab_2"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="175dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="@color/colorPrimaryLight"
+        android:padding="8dp"
+        android:text="@string/fab_back"
+        android:textColor="@android:color/white"
+        card_view:icon="@drawable/ic_baseline_arrow_back_24"
+        card_view:iconTint="@android:color/white"
+        android:visibility="invisible"/>
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:scaleType="centerCrop"
-                android:src="@color/colorAccent"
-                android:contentDescription="@string/desc"/>
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fab_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="105dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="@color/colorPrimaryLight"
+        android:padding="8dp"
+        android:text="@string/fab_up"
+        android:textColor="@android:color/white"
+        card_view:icon="@drawable/ic_baseline_arrow_upward_24"
+        card_view:iconTint="@android:color/white"
+        android:visibility="invisible"/>
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/tv_photo"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                tools:src="@android:color/black"
-                android:layout_gravity="bottom"/>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="24dp"
+        android:clickable="true"
+        android:elevation="16dp"
+        android:focusable="true"
+        android:visibility="visible"
+        android:background="?android:attr/selectableItemBackground"
+        android:src="@drawable/ic_baseline_add_24"
+        card_view:backgroundTint="@color/colorAccent"
+        android:tint="@color/colorPrimaryDark"
+        card_view:pressedTranslationZ="12dp"
+        card_view:maxImageSize="35dp"/>
 
-        </FrameLayout>
-
-        <TextView
-            android:id="@+id/tv_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:text="User Name"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:textAlignment="center"/>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center"
-            android:layout_marginTop="6dp"
-            android:layout_marginHorizontal="22dp">
-
-            <TextView
-                android:id="@+id/tv_username"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:text="Username"
-                android:textSize="16sp"
-                android:layout_gravity="center_vertical"
-                android:drawableStart="@drawable/ic_id_black"
-                android:drawablePadding="6dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/bar"
-                android:textAlignment="center"
-                android:layout_marginStart="8dp"
-                android:textSize="22sp"/>
-
-            <TextView
-                android:id="@+id/tv_location"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:text="User Location"
-                android:layout_marginStart="8dp"
-                android:textSize="16sp"
-                android:layout_gravity="center_vertical"
-                android:drawableStart="@drawable/ic_pin_black"
-                android:drawablePadding="2dp"/>
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/tv_company"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="4dp"
-            android:layout_marginHorizontal="10dp"
-            tools:text="User Company"
-            android:textSize="14sp"
-            android:drawablePadding="10dp"
-            android:drawableStart="@drawable/ic_building_black"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="36dp"
-            android:layout_marginHorizontal="14dp"
-            android:layout_marginBottom="64dp">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                card_view:cardCornerRadius="10dp"
-                card_view:cardElevation="4dp"
-                android:elevation="4dp"
-                android:layout_margin="8dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        card_view:cardCornerRadius="8dp"
-                        card_view:cardElevation="4dp"
-                        android:elevation="4dp"
-                        android:layout_marginHorizontal="2dp">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/repository"
-                            android:textSize="14sp"
-                            android:layout_weight="1"
-                            android:textAlignment="center"/>
-
-                    </androidx.cardview.widget.CardView>
-
-                    <TextView
-                        android:id="@+id/tv_repo"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        tools:text="0"
-                        android:textSize="14sp"
-                        android:layout_weight="1"
-                        android:textAlignment="center"
-                        android:layout_marginBottom="4dp"/>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                card_view:cardCornerRadius="10dp"
-                card_view:cardElevation="4dp"
-                android:elevation="4dp"
-                android:layout_margin="8dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        card_view:cardCornerRadius="8dp"
-                        card_view:cardElevation="4dp"
-                        android:elevation="4dp"
-                        android:layout_marginHorizontal="2dp">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/follower"
-                            android:textSize="14sp"
-                            android:layout_weight="1"
-                            android:textAlignment="center"/>
-
-                    </androidx.cardview.widget.CardView>
-
-                    <TextView
-                        android:id="@+id/tv_follower"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        tools:text="0"
-                        android:textSize="14sp"
-                        android:layout_weight="1"
-                        android:textAlignment="center"
-                        android:layout_marginBottom="4dp"/>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                card_view:cardCornerRadius="10dp"
-                card_view:cardElevation="4dp"
-                android:elevation="4dp"
-                android:layout_margin="8dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        card_view:cardCornerRadius="8dp"
-                        card_view:cardElevation="4dp"
-                        android:elevation="4dp"
-                        android:layout_marginHorizontal="2dp">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/following"
-                            android:textSize="14sp"
-                            android:layout_weight="1"
-                            android:textAlignment="center"/>
-
-                    </androidx.cardview.widget.CardView>
-
-                    <TextView
-                        android:id="@+id/tv_following"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        tools:text="0"
-                        android:textSize="14sp"
-                        android:layout_weight="1"
-                        android:textAlignment="center"
-                        android:layout_marginBottom="4dp"/>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-</ScrollView>
+</RelativeLayout>

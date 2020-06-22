@@ -5,4 +5,16 @@
     <string name="following">Following</string>
     <string name="desc">Header</string>
     <string name="bar">|</string>
+    <string name="fab_goto">Go to GitHub</string>
+    <string name="fab_back">Back</string>
+    <string name="fab_up">UP</string>
+    <string name="desc_github_mark">Github Mark</string>
+    <string name="desc_github">GitHub adalah layanan hos web bersama untuk proyek pengembangan perangkat lunak yang menggunakan sistem kendali versi Git dan layanan hosting internet. Ini memberikan kontrol akses dan beberapa fitur kolaborasi seperti pelacakan bug, permintaan fitur, manajemen tugas, dan wiki untuk setiap proyek.</string>
+    <string name="wikipedia">~Wikipedia~</string>
+    <string name="atribusi">ATRIBUSI</string>
+    <string name="atribusi_content">1. Building-black\nIcons made by Freepik from www.flaticon.com\n\n2. pin-black\nIcons made by Freepik from www.flaticon.com\n\n3. id-black\nIcons made by Freepik from www.flaticon.com</string>
+    <string name="developer">DEVELOPER</string>
+    <string name="developer_content">Raffi Zulvian Muzhaffar</string>
+    <string name="fab_info">App Info</string>
+    <string name="app_name_splash">GitHub\nUser App</string>
 </resources>
