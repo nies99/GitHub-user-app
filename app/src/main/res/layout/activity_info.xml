@@ -95,6 +95,7 @@
 
             <androidx.cardview.widget.CardView
                 style="@style/AppTheme.InfoCV"
+                android:layout_marginBottom="64dp"
                 card_view:cardBackgroundColor="@color/colorPrimary"
                 card_view:cardCornerRadius="8dp"
                 card_view:cardElevation="8dp">
