@@ -14,4 +14,43 @@
         <item name="background">@color/background</item>
     </style>
 
+    <style name="AppTheme.FAB">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_marginEnd">24dp</item>
+    </style>
+
+    <style name="AppTheme.FAB.ExtFAB">
+        <item name="android:padding">8dp</item>
+        <item name="android:backgroundTint">@color/colorPrimaryLight</item>
+        <item name="android:visibility">invisible</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="AppTheme.SocialCV">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:elevation">4dp</item>
+    </style>
+
+    <style name="AppTheme.SocialCV.Component">
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:layout_margin">0dp</item>
+        <item name="android:layout_marginStart">2dp</item>
+        <item name="android:layout_marginEnd">2dp</item>
+        <item name="android:layout_weight">0</item>
+    </style>
+
+    <style name="AppTheme.InfoCV">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">38dp</item>
+        <item name="android:layout_marginEnd">38dp</item>
+        <item name="android:layout_marginTop">32dp</item>
+    </style>
+
 </resources>

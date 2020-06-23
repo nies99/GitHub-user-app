@@ -17,68 +17,41 @@
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/fab_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
+        style="@style/AppTheme.FAB.ExtFAB"
         android:layout_marginBottom="225dp"
-        android:layout_marginEnd="24dp"
-        android:backgroundTint="@color/colorPrimaryLight"
-        android:padding="8dp"
         android:text="@string/fab_goto"
-        android:textColor="@android:color/white"
         app:icon="@drawable/ic_github_mark_32px"
-        app:iconTint="@android:color/white"
-        android:visibility="invisible"/>
+        app:iconTint="@android:color/white"/>
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/fab_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
+        style="@style/AppTheme.FAB.ExtFAB"
+        android:layout_width="140dp"
         android:layout_marginBottom="165dp"
-        android:layout_marginEnd="24dp"
-        android:backgroundTint="@color/colorPrimaryLight"
-        android:padding="8dp"
         android:text="@string/fab_info"
-        android:textColor="@android:color/white"
         app:icon="@drawable/ic_baseline_info_24"
-        app:iconTint="@android:color/white"
-        android:visibility="invisible"/>
+        app:iconTint="@android:color/white"/>
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/fab_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
+        style="@style/AppTheme.FAB.ExtFAB"
         android:layout_marginBottom="105dp"
-        android:layout_marginEnd="24dp"
-        android:backgroundTint="@color/colorPrimaryLight"
-        android:padding="8dp"
         android:text="@string/fab_up"
-        android:textColor="@android:color/white"
         app:icon="@drawable/ic_baseline_arrow_upward_24"
-        app:iconTint="@android:color/white"
-        android:visibility="invisible"/>
+        app:iconTint="@android:color/white"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_0"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
+        style="@style/AppTheme.FAB"
         android:layout_marginBottom="30dp"
-        android:layout_marginEnd="24dp"
         android:clickable="true"
         android:elevation="16dp"
         android:focusable="true"
         android:visibility="visible"
         android:background="?android:attr/selectableItemBackground"
         android:src="@drawable/ic_baseline_add_24"
-        app:backgroundTint="@color/colorAccent"
         android:tint="@color/colorPrimaryDark"
+        app:backgroundTint="@color/colorAccent"
         app:pressedTranslationZ="12dp"
         app:maxImageSize="35dp"/>
 

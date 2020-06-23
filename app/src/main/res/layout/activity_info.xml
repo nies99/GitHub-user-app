@@ -25,9 +25,7 @@
                 android:contentDescription="@string/desc_github_mark" />
 
             <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="38dp"
+                style="@style/AppTheme.InfoCV"
                 card_view:cardBackgroundColor="@color/colorPrimary"
                 card_view:cardCornerRadius="8dp"
                 card_view:cardElevation="8dp">
@@ -40,9 +38,9 @@
                         android:id="@+id/github_desc"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/desc_github"
                         android:layout_marginHorizontal="36dp"
                         android:layout_marginTop="16dp"
+                        android:text="@string/desc_github"
                         android:textSize="18sp"
                         android:textAlignment="center"
                         android:textColor="@android:color/white"/>
@@ -51,22 +49,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="16dp"
+                        android:layout_below="@id/github_desc"
                         android:text="@string/wikipedia"
                         android:textStyle="italic"
                         android:textColor="@color/colorAccent"
                         android:textAlignment="center"
-                        android:textSize="20sp"
-                        android:layout_below="@id/github_desc"/>
+                        android:textSize="20sp"/>
 
                 </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="38dp"
-                android:layout_marginTop="32dp"
+                style="@style/AppTheme.InfoCV"
                 card_view:cardBackgroundColor="@color/colorPrimary"
                 card_view:cardCornerRadius="8dp"
                 card_view:cardElevation="8dp">
@@ -99,10 +94,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="38dp"
-                android:layout_marginVertical="32dp"
+                style="@style/AppTheme.InfoCV"
                 card_view:cardBackgroundColor="@color/colorPrimary"
                 card_view:cardCornerRadius="8dp"
                 card_view:cardElevation="8dp">
@@ -141,68 +133,41 @@
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/fab_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="245dp"
-        android:layout_marginEnd="24dp"
-        android:backgroundTint="@color/colorPrimaryLight"
-        android:padding="8dp"
+        style="@style/AppTheme.FAB.ExtFAB"
+        android:layout_marginBottom="225dp"
         android:text="@string/fab_goto"
-        android:textColor="@android:color/white"
         card_view:icon="@drawable/ic_github_mark_32px"
-        card_view:iconTint="@android:color/white"
-        android:visibility="invisible"/>
+        card_view:iconTint="@android:color/white"/>
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/fab_2"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="175dp"
-        android:layout_marginEnd="24dp"
-        android:backgroundTint="@color/colorPrimaryLight"
-        android:padding="8dp"
+        style="@style/AppTheme.FAB.ExtFAB"
+        android:layout_width="140dp"
+        android:layout_marginBottom="165dp"
         android:text="@string/fab_back"
-        android:textColor="@android:color/white"
         card_view:icon="@drawable/ic_baseline_arrow_back_24"
-        card_view:iconTint="@android:color/white"
-        android:visibility="invisible"/>
+        card_view:iconTint="@android:color/white"/>
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/fab_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
+        style="@style/AppTheme.FAB.ExtFAB"
         android:layout_marginBottom="105dp"
-        android:layout_marginEnd="24dp"
-        android:backgroundTint="@color/colorPrimaryLight"
-        android:padding="8dp"
         android:text="@string/fab_up"
-        android:textColor="@android:color/white"
         card_view:icon="@drawable/ic_baseline_arrow_upward_24"
-        card_view:iconTint="@android:color/white"
-        android:visibility="invisible"/>
+        card_view:iconTint="@android:color/white"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_0"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
+        style="@style/AppTheme.FAB"
         android:layout_marginBottom="30dp"
-        android:layout_marginEnd="24dp"
         android:clickable="true"
         android:elevation="16dp"
         android:focusable="true"
         android:visibility="visible"
         android:background="?android:attr/selectableItemBackground"
         android:src="@drawable/ic_baseline_add_24"
-        card_view:backgroundTint="@color/colorAccent"
         android:tint="@color/colorPrimaryDark"
+        card_view:backgroundTint="@color/colorAccent"
         card_view:pressedTranslationZ="12dp"
         card_view:maxImageSize="35dp"/>
 

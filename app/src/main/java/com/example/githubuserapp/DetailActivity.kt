@@ -100,6 +100,7 @@ class DetailActivity : AppCompatActivity() {
         fab1Goto.setOnClickListener {
             fab1Goto.setIconTintResource(R.color.colorAccent)
             fab1Goto.setTextColor(ContextCompat.getColor(this, R.color.colorAccent))
+
             val goTo = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.github.com/"))
             startActivity(goTo)
         }

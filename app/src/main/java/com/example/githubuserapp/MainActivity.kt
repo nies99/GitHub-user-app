@@ -80,30 +80,44 @@ class MainActivity : AppCompatActivity() {
         fab1Goto.setOnClickListener {
             fab1Goto.setIconTintResource(R.color.colorAccent)
             fab1Goto.setTextColor(ContextCompat.getColor(this, R.color.colorAccent))
+
             val goTo = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.github.com/"))
             startActivity(goTo)
         }
 
         fab2Info.setOnClickListener {
+            fab1Goto.startAnimation(fabClose)
+            fab2Info.startAnimation(fabClose)
+            fab3Up.startAnimation(fabClose)
+            fabMain.startAnimation(fabLeft)
+            fab1Goto.isClickable = false
+            fab2Info.isClickable = false
+            fab3Up.isClickable = false
+            isOpen = false
+
             val info = Intent(this@MainActivity, InfoActivity::class.java)
             startActivity(info)
         }
 
         fab3Up.setOnClickListener {
+            fab1Goto.startAnimation(fabClose)
+            fab2Info.startAnimation(fabClose)
+            fab3Up.startAnimation(fabClose)
+            fabMain.startAnimation(fabLeft)
+            fab1Goto.isClickable = false
+            fab2Info.isClickable = false
+            fab3Up.isClickable = false
+            isOpen = false
+
             rvUsers.post {
                 rvUsers.smoothScrollToPosition(0)
             }
         }
     }
 
-    private fun showRecyclerView() {
-        rvUsers.layoutManager = LinearLayoutManager(this)
-        val cardViewAdapter = Adapter(list)
-        rvUsers.adapter = cardViewAdapter
-    }
-
     private fun getJSON(context: Context): String? {
         val jsonString: String
+
         try {
             jsonString = context.assets.open("githubuser.json").bufferedReader().use { it.readText() }
         } catch (ioException: IOException) {
@@ -140,5 +154,11 @@ class MainActivity : AppCompatActivity() {
             )
             list.add(user)
         }
+    }
+
+    private fun showRecyclerView() {
+        rvUsers.layoutManager = LinearLayoutManager(this)
+        val cardViewAdapter = Adapter(list)
+        rvUsers.adapter = cardViewAdapter
     }
 }

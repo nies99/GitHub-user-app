@@ -16,7 +16,7 @@ class InfoActivity : AppCompatActivity() {
 
     private lateinit var fabMain: FloatingActionButton
     private lateinit var fab1Goto: ExtendedFloatingActionButton
-    private lateinit var fab2Info: ExtendedFloatingActionButton
+    private lateinit var fab2Back: ExtendedFloatingActionButton
     private lateinit var fab3Up: ExtendedFloatingActionButton
     private lateinit var fabOpen: Animation
     private lateinit var fabClose: Animation
@@ -33,7 +33,7 @@ class InfoActivity : AppCompatActivity() {
 
         fabMain = findViewById(R.id.fab_0)
         fab1Goto = findViewById(R.id.fab_1)
-        fab2Info = findViewById(R.id.fab_2)
+        fab2Back = findViewById(R.id.fab_2)
         fab3Up = findViewById(R.id.fab_3)
 
         fabClose = AnimationUtils.loadAnimation(applicationContext, R.anim.close)
@@ -48,20 +48,20 @@ class InfoActivity : AppCompatActivity() {
         fabMain.setOnClickListener {
             if (isOpen) {
                 fab1Goto.startAnimation(fabClose)
-                fab2Info.startAnimation(fabClose)
+                fab2Back.startAnimation(fabClose)
                 fab3Up.startAnimation(fabClose)
                 fabMain.startAnimation(fabLeft)
                 fab1Goto.isClickable = false
-                fab2Info.isClickable = false
+                fab2Back.isClickable = false
                 fab3Up.isClickable = false
                 isOpen = false
             } else {
                 fab1Goto.startAnimation(fabOpen)
-                fab2Info.startAnimation(fabOpen)
+                fab2Back.startAnimation(fabOpen)
                 fab3Up.startAnimation(fabOpen)
                 fabMain.startAnimation(fabRight)
                 fab1Goto.isClickable = true
-                fab2Info.isClickable = true
+                fab2Back.isClickable = true
                 fab3Up.isClickable = true
                 isOpen = true
             }
@@ -70,11 +70,12 @@ class InfoActivity : AppCompatActivity() {
         fab1Goto.setOnClickListener {
             fab1Goto.setIconTintResource(R.color.colorAccent)
             fab1Goto.setTextColor(ContextCompat.getColor(this, R.color.colorAccent))
+
             val goTo = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.github.com/"))
             startActivity(goTo)
         }
 
-        fab2Info.setOnClickListener {
+        fab2Back.setOnClickListener {
             finish()
         }
 

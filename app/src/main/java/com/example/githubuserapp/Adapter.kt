@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -59,8 +58,6 @@ class Adapter(private val listUser: ArrayList<User>): RecyclerView.Adapter<Adapt
         holder.tvRepo.text = user.repository.toString()
         holder.tvFollower.text = user.follower.toString()
         holder.tvFollowing.text = user.following.toString()
-
-        holder.itemView.setOnClickListener { Toast.makeText(holder.itemView.context, listUser[holder.adapterPosition].name, Toast.LENGTH_SHORT).show()}
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewViewHolder {
