@@ -14,18 +14,6 @@ import com.google.android.material.floatingactionbutton.ExtendedFloatingActionBu
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class DetailActivity : AppCompatActivity() {
-    private lateinit var svInfo: ScrollView
-
-    private lateinit var fabMain: FloatingActionButton
-    private lateinit var fab1Goto: ExtendedFloatingActionButton
-    private lateinit var fab2Info: ExtendedFloatingActionButton
-    private lateinit var fab3Up: ExtendedFloatingActionButton
-    private lateinit var fabOpen: Animation
-    private lateinit var fabClose: Animation
-    private lateinit var fabRight: Animation
-    private lateinit var fabLeft: Animation
-
-    private var isOpen: Boolean = false
 
     companion object{
         const val EXTRA_USER = "extra_user"
@@ -36,18 +24,6 @@ class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
-
-        svInfo = findViewById(R.id.scroll_detail)
-
-        fabMain = findViewById(R.id.fab_0)
-        fab1Goto = findViewById(R.id.fab_1)
-        fab2Info = findViewById(R.id.fab_2)
-        fab3Up = findViewById(R.id.fab_3)
-
-        fabClose = AnimationUtils.loadAnimation(applicationContext, R.anim.close)
-        fabOpen = AnimationUtils.loadAnimation(applicationContext, R.anim.open)
-        fabLeft = AnimationUtils.loadAnimation(applicationContext, R.anim.left_rotate)
-        fabRight = AnimationUtils.loadAnimation(applicationContext, R.anim.right_rotate)
 
         showAnimation()
 
@@ -75,23 +51,37 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun showAnimation() {
+        var isOpen = false
+
+        val svInfo: ScrollView = findViewById(R.id.scroll_detail)
+
+        val fabMain: FloatingActionButton = findViewById(R.id.fab_0)
+        val fab1Goto: ExtendedFloatingActionButton = findViewById(R.id.fab_1)
+        val fab2Back: ExtendedFloatingActionButton = findViewById(R.id.fab_2)
+        val fab3Up: ExtendedFloatingActionButton = findViewById(R.id.fab_3)
+
+        val fabClose: Animation = AnimationUtils.loadAnimation(applicationContext, R.anim.close)
+        val fabOpen: Animation = AnimationUtils.loadAnimation(applicationContext, R.anim.open)
+        val fabLeft: Animation = AnimationUtils.loadAnimation(applicationContext, R.anim.left_rotate)
+        val fabRight: Animation = AnimationUtils.loadAnimation(applicationContext, R.anim.right_rotate)
+
         fabMain.setOnClickListener {
             if (isOpen) {
                 fab1Goto.startAnimation(fabClose)
-                fab2Info.startAnimation(fabClose)
+                fab2Back.startAnimation(fabClose)
                 fab3Up.startAnimation(fabClose)
                 fabMain.startAnimation(fabLeft)
                 fab1Goto.isClickable = false
-                fab2Info.isClickable = false
+                fab2Back.isClickable = false
                 fab3Up.isClickable = false
                 isOpen = false
             } else {
                 fab1Goto.startAnimation(fabOpen)
-                fab2Info.startAnimation(fabOpen)
+                fab2Back.startAnimation(fabOpen)
                 fab3Up.startAnimation(fabOpen)
                 fabMain.startAnimation(fabRight)
                 fab1Goto.isClickable = true
-                fab2Info.isClickable = true
+                fab2Back.isClickable = true
                 fab3Up.isClickable = true
                 isOpen = true
             }
@@ -105,7 +95,7 @@ class DetailActivity : AppCompatActivity() {
             startActivity(goTo)
         }
 
-        fab2Info.setOnClickListener {
+        fab2Back.setOnClickListener {
             finish()
         }
 

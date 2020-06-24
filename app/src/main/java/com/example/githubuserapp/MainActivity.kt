@@ -19,33 +19,12 @@ class MainActivity : AppCompatActivity() {
     private lateinit var rvUsers: RecyclerView
     private var list: ArrayList<User> = arrayListOf()
 
-    private lateinit var fabMain: FloatingActionButton
-    private lateinit var fab1Goto: ExtendedFloatingActionButton
-    private lateinit var fab2Info: ExtendedFloatingActionButton
-    private lateinit var fab3Up: ExtendedFloatingActionButton
-    private lateinit var fabOpen: Animation
-    private lateinit var fabClose: Animation
-    private lateinit var fabRight: Animation
-    private lateinit var fabLeft: Animation
-
-    private var isOpen: Boolean = false
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         rvUsers = findViewById(R.id.rv_users)
         rvUsers.setHasFixedSize(true)
-
-        fabMain = findViewById(R.id.fab_0)
-        fab1Goto = findViewById(R.id.fab_1)
-        fab2Info = findViewById(R.id.fab_2)
-        fab3Up = findViewById(R.id.fab_3)
-
-        fabClose = AnimationUtils.loadAnimation(applicationContext, R.anim.close)
-        fabOpen = AnimationUtils.loadAnimation(applicationContext, R.anim.open)
-        fabLeft = AnimationUtils.loadAnimation(applicationContext, R.anim.left_rotate)
-        fabRight = AnimationUtils.loadAnimation(applicationContext, R.anim.right_rotate)
 
         showAnimation()
 
@@ -55,6 +34,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showAnimation() {
+        var isOpen = false
+
+        val fabMain: FloatingActionButton = findViewById(R.id.fab_0)
+        val fab1Goto: ExtendedFloatingActionButton = findViewById(R.id.fab_1)
+        val fab2Info: ExtendedFloatingActionButton = findViewById(R.id.fab_2)
+        val fab3Up: ExtendedFloatingActionButton = findViewById(R.id.fab_3)
+
+        val fabClose: Animation = AnimationUtils.loadAnimation(applicationContext, R.anim.close)
+        val fabOpen: Animation = AnimationUtils.loadAnimation(applicationContext, R.anim.open)
+        val fabLeft: Animation = AnimationUtils.loadAnimation(applicationContext, R.anim.left_rotate)
+        val fabRight: Animation = AnimationUtils.loadAnimation(applicationContext, R.anim.right_rotate)
+
         fabMain.setOnClickListener {
             if (isOpen) {
                 fab1Goto.startAnimation(fabClose)
