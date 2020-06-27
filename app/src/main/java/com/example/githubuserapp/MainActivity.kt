@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.gson.Gson
 import org.json.JSONObject
 import java.io.IOException
 
@@ -122,28 +123,11 @@ class MainActivity : AppCompatActivity() {
         val objectJSON = JSONObject(response)
         val userArray = objectJSON.getJSONArray("users")
 
-        for (obj in 0 until userArray.length()) {
-            val userObject = userArray.getJSONObject(obj)
-            val username = userObject.getString("username")
-            val name = userObject.getString("name")
-            val avatar = userObject.getString("avatar")
-            val company = userObject.getString("company")
-            val location = userObject.getString("location")
-            val repo = userObject.getInt("repository")
-            val follower = userObject.getInt("follower")
-            val following = userObject.getInt("following")
+        for (i in 0 until userArray.length()) {
+            val gson = Gson()
+            val data = gson.fromJson(userArray.getJSONObject(i).toString(), User::class.java)
 
-            val user = User(
-                username = username,
-                name = name,
-                avatar = avatar,
-                company = company,
-                location = location,
-                repository = repo,
-                follower = follower,
-                following = following
-            )
-            list.add(user)
+            list.add(data)
         }
     }
 
